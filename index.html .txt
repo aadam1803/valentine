@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Tanu ❤️</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    color: white;
+}
+button {
+    font-size: 20px;
+    padding: 12px 25px;
+    margin: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+#no {
+    background-color: gray;
+    color: white;
+    position: absolute;
+}
+button:hover {
+    transform: scale(1.1);
+}
+.heart {
+    position: absolute;
+    animation: floatUp 4s linear infinite;
+}
+@keyframes floatUp {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background music -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/vx4kLgnFexo?autoplay=1&loop=1&playlist=vx4kLgnFexo" frameborder="0" allow="autoplay"></iframe>
+
+<div>
+    <h1>Will you be my Valentine, Tanu? 💖</h1>
+    <button id="yes" onclick="sayYes()">Yes 💕</button>
+    <button id="no" onmouseover="moveButton()">No 😢</button>
+</div>
+
+<script>
+function sayYes() {
+    document.body.innerHTML = "<h1 style='color:white;'>YAY!!! ❤️ Tanu, you just made me the happiest person alive 🥰</h1>";
+    for (let i = 0; i < 60; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "💖";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 40 + 20) + "px";
+        document.body.appendChild(heart);
+    }
+}
+
+function moveButton() {
+    const button = document.getElementById("no");
+    button.style.top = Math.random() * window.innerHeight + "px";
+    button.style.left = Math.random() * window.innerWidth + "px";
+}
+</script>
+
+</body>
+</html>
